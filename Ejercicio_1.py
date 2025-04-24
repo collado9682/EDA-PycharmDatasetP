@@ -16,4 +16,5 @@ print(df_movies.info())
 # 5. Convertir la columna 'in_theaters_date' al tipo datetime
 df_movies["in_theaters_date"]= pd.to_datetime(df_movies["in_theaters_date"])
 
+# 6. Verificar que la conversión fue exitosa (dtypes)
 print(df_movies.dtypes)
