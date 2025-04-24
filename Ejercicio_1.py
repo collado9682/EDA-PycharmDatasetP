@@ -6,6 +6,14 @@ import matplotlib.pyplot as plt
 df_movies= pd.read_csv("./Data/Rotten Tomatoes Movies.csv")
 
 # 3. Mostrar las primeras filas del DataFrame para revisar su contenido
-print(df_movies.head())
-print(df_movies.dtypes)
+print(df_movies.head(10))
 
+
+# 4. Verificar los nombres de las columnas
+print("Tipos de datos:")
+print(df_movies.info())
+
+# 5. Convertir la columna 'in_theaters_date' al tipo datetime
+df_movies["in_theaters_date"]= pd.to_datetime(df_movies["in_theaters_date"])
+
+print(df_movies.dtypes)
