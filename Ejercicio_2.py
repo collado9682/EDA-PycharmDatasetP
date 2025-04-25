@@ -12,5 +12,8 @@ import matplotlib.pyplot as plt
 df_movies= pd.read_csv("./Data/Rotten Tomatoes Movies.csv")
 #print(df_movies)
 
+# 8. ¿Cuántas películas hay en total? Mostrar en consola
+
+print(f"Total de peliculas: {len(df_movies)}")
 
 
