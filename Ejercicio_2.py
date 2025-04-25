@@ -25,6 +25,6 @@ print(df_movies_calificaciones)
 
 #Propiedades del grafico
 plt.figure(figsize= (10,10))
-plt.pie(df_movies_calificaciones, labels=['Rotten', 'Fresh','Certified Fresh'], autopct='%1.0f%%', colors=['blue', 'orange', 'green'], startangle=140)
+plt.pie(df_movies_calificaciones, labels=['Rotten', 'Fresh','Certified Fresh'], autopct='%1.0f%%', colors=['steelblue', 'darkorange', 'green'], startangle=140)
 plt.title("Distribución de calificaciones")
 plt.show()
