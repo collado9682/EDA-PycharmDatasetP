@@ -20,3 +20,7 @@ df_genres_exploded = df_movies_copy.assign(
 ).explode('genre')
 
 #print(df_movies_copy)
+
+#Calcular el promedio de audience_rating para cada género individual
+promedio_géneros= df_genres_exploded.groupby('genre')['audience_rating'].mean()
+print(promedio_géneros)
