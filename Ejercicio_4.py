@@ -20,7 +20,19 @@ df_genres_exploded = df_movies_copy.assign(
 ).explode('genre')
 
 #print(df_movies_copy)
+df_genres_exploded['genre'] = df_genres_exploded['genre'].str.strip()
 
 #Calcular el promedio de audience_rating para cada género individual
-promedio_géneros= df_genres_exploded.groupby('genre')['audience_rating'].mean()
-print(promedio_géneros)
+promedio_audiencia_géneros= df_genres_exploded.groupby('genre')['audience_rating'].mean().sort_values(ascending=False)
+#print(promedio_audiencia_géneros)
+
+# •	Muestra los 10 géneros con el promedio de calificación de audiencia más alto haciendo uso de un diagrama de pastel.
+Top_10_generos= promedio_audiencia_géneros.head(10)
+print(Top_10_generos)
+
+#Propiedades del gráfico
+plt.figure(figsize= (10,10))
+plt.pie(Top_10_generos,labels=Top_10_generos.index, colors=['steelblue', 'darkorange', 'green','gold','lightpink', 'slateblue','lightblue', 'khaki','indianred','goldenrod'], startangle=140)
+plt.title("Top 10 géneros con mejor promedio de valoración")
+plt.tight_layout()
+plt.show()
