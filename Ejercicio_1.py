@@ -18,3 +18,10 @@ df_movies["in_theaters_date"]= pd.to_datetime(df_movies["in_theaters_date"])
 
 # 6. Verificar que la conversión fue exitosa (dtypes)
 print(df_movies.dtypes)
+
+# 7. Mostrar si hubo valores no convertidos (NaT)
+missing_dates = df_movies['in_theaters_date'].isna().sum()
+print(f"\nPelículas con fechas no reconocidas: {missing_dates}")
+
+
+
