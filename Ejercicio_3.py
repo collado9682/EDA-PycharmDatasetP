@@ -24,7 +24,17 @@ promedio_audiencia= df_movies['audience_rating'].mean()
 print(f"Promedio de valoración por críticos: {promedio_críticos:.2f}")
 print(f"Promedio de valoración por audiencia: {promedio_audiencia:.2f}")
 
+# 12. Para cada película, calcular la diferencia entre audiencia y críticos
 
+df_movies['rating_diff']= df_movies['audience_rating'] - df_movies['tomatometer_rating']
+
+# 13. Histograma de las diferencias de valoración
+plt.figure(figsize= (10,10))
+plt.hist(df_movies['rating_diff'], bins=30, color='mediumseagreen',edgecolor='black')
+plt.xlabel('Diferencia (audiencia-críticos)')
+plt.ylabel('Número de peliculas')
+plt.title('Distribución, diferencias entre audiencia y críticos')
+plt.show()
 
 
 
